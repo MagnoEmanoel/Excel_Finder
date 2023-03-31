@@ -7,9 +7,10 @@ O sistema possui três páginas HTML, sendo uma para a pesquisa de produtos, uma
 O usuário pode pesquisar produtos por nome, adicionar novos produtos com código, nome e quantidade, e editar o nome e a quantidade de um produto específico. 
 O sistema retorna uma tabela com os resultados da pesquisa, que pode ser visualizada na página de resultados.
 
-ENGLISH VERSION
+
 
 # Excel_Finder
+ENGLISH VERSION
 Quick and easy search in Excel spreadsheets
 
 Python code that uses Flask framework to create a simple system for product registration, search, and editing.
