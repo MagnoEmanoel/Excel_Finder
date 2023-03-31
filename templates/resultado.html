@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados da busca</title>
+</head>
+<body style="text-align: center;">
+    {% if not produtos.empty %}
+    <div style="margin: auto; width: 80%;">
+        <table style="border-collapse: collapse; width: 100%; background-color: #fff;">
+            <tr style="background-color: #89D99D;">
+                <th style="text-align: left; padding: 8px; border: 1px solid #DEEFE7;">Código do Produto</th>
+                <th style="text-align: left; padding: 8px; border: 1px solid #DEEFE7;">Nome do Produto</th>
+                <th style="text-align: left; padding: 8px; border: 1px solid #DEEFE7;">Quantidade</th>
+                <th style="text-align: left; padding: 8px; border: 1px solid #DEEFE7;">Editar</th>
+            </tr>
+            {% for produto in produtos.iterrows() %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="text-align: left; padding: 8px; border: 1px solid #ddd;">{{ produto[1]['Código do Produto'] }}</td>
+                <td style="text-align: left; padding: 8px; border: 1px solid #ddd;">{{ produto[1]['Nome do Produto'] }}</td>
+                <td style="text-align: left; padding: 8px; border: 1px solid #ddd;">{{ produto[1]['Quantidade'] }}</td>
+                <td style="text-align: center; padding: 8px; border: 1px solid #ddd;"><a href="/editar/{{ produto[1]['Código do Produto'] }}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>    
+    <br>
+    <button style="margin: 0 auto;">Voltar à página inicial</button>
+    <br><br>
+    <form method="GET" action="/adicionar">
+        <button type="submit">Adicionar Produto</button>
+    </form>
+    {% else %}
+    <p>Produtos similares não encontrados.</p>
+    <br>
+    <button style="margin: 0 auto;">Voltar à página inicial</button>
+    {% endif %}
+</body>
+</html>

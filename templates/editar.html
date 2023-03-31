@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Produto</title>
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto; width: 20%; background-color: #89D99D;">
+        <h1>Editar Produto</h1>
+        <form method="POST" action="/atualizar-produto">
+            <input type="hidden" name="codigo" value="{{ produto['Código do Produto'] }}">
+            <label for="nome" style="display: inline-block; width: 100px; text-align: right;">Nome:</label>
+            <input type="text" id="nome" name="nome" style="display: inline-block; width: 200px;" value="{{ produto['Nome do Produto'] }}"><br><br>
+            <label for="quantidade" style="display: inline-block; width: 100px; text-align: right;">Quantidade:</label>
+            <input type="text" id="quantidade" name="quantidade" style="display: inline-block; width: 200px;" value="{{ produto['Quantidade'] }}"><br><br>
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+</body>
+</html>
